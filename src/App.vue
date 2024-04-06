@@ -1,18 +1,20 @@
 <template>
-  <div>
-    <h1>Coffee Ratio Calculator</h1>
-    <span>Pour over (1:16)</span>
-    <div class="fields">
-      <div>
-        <h2>Coffee</h2>
-        <input type="number" v-model="grams" @input="updateWaterFromCoffee" /> g
-      </div>
-      <div>
-        <h2>Water</h2>
-        <input type="number" v-model="milliliters" @input="updateCoffeeFromWater" /> ml
+  <main>
+    <div class="container py-[2rem]">
+      <h1 class="text-center">Coffee Ratio Calculator</h1>
+      <span>Pour over (1:16)</span>
+      <div class="fields">
+        <div>
+          <h2>Coffee</h2>
+          <input type="number" v-model="grams" @input="updateWaterFromCoffee" /> g
+        </div>
+        <div>
+          <h2>Water</h2>
+          <input type="number" v-model="milliliters" @input="updateCoffeeFromWater" /> ml
+        </div>
       </div>
     </div>
-  </div>
+  </main>
 </template>
 
 <script setup>
@@ -33,11 +35,3 @@ const updateCoffeeFromWater = () => {
 watch(grams, updateWaterFromCoffee);
 watch(milliliters, updateCoffeeFromWater);
 </script>
-
-<style>
-.fields {
-  display: flex;
-  gap: 1rem;
-  justify-content: space-between;
-} 
-</style>
