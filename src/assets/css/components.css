@@ -2,6 +2,9 @@
 
 @layer components {
     .btn {
-        @apply rounded-md;
+        @apply rounded-md border-2 border-cafe-dark text-center flex items-center justify-center w-max p-[0.5rem];
+    }
+    .btn.active {
+        @apply bg-cafe-dark text-white;
     }
 }
