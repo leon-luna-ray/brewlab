@@ -7,4 +7,10 @@
     .btn.active {
         @apply bg-cafe-dark text-white;
     }
+    .input-field {
+        @apply flex gap-[1rem] font-thin text-[4rem];
+    }
+    .input-field input {
+        @apply w-[14rem];
+    }
 }
