@@ -9,7 +9,7 @@
           <div class="grid grid-cols-3 gap-[0.5rem]">
             <button v-for="item in ratios" :class="['btn zoom-in-out', { 'active': brewMethod.name === item.name }]"
               @click="brewMethod = item">
-              <span>{{ item.name }}</span>
+              <span class="line-clamp-1">{{ item.name }}</span>
             </button>
           </div>
           <div class="text-center flex flex-col items-center gap-y-[0.25rem]">
@@ -17,7 +17,6 @@
             <h2>1:{{ brewMethod.ratio }}</h2>
           </div>
         </div>
-
         <div class="fields flex flex-col md:flex-row justify-center gap-[1rem] lg:gap-[4rem]">
           <div>
             <div class="input-field">
