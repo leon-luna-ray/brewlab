@@ -48,3 +48,10 @@
 @utility shadow-black {
   @apply shadow-[3px_3px_0px_0px_rgba(0,0,0,1)];
 }
+@utility border-widget {
+  @apply border-[3px] border-black rounded-xl;
+}
+
+@utility border-btn {
+  @apply border-[2px] border-black rounded-md;
+}

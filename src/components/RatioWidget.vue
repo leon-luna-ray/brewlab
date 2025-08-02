@@ -2,11 +2,18 @@
   <div class="widget">
     <h2 class="label-text">Brewing Method</h2>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-x-[0.4rem] gap-[0.5rem]">
-      <button v-for="item in ratios" :class="['btn light-blue flex flex-col  gap-[0.25rem] justify-center items-center', { 'active': brewMethod.name === item.name }]"
+      <button v-for="item in ratios"
+        :class="['btn light-blue flex flex-col  gap-[0.25rem] justify-center items-center', { 'active': brewMethod.name === item.name }]"
         @click="brewMethod = item">
-        <IconSquare class="h-[12px] w-[12px]"/>
+        <IconSquare class="h-[12px] w-[12px]" />
         <span class="font-[700] text-[0.75rem]">{{ item.name }}</span>
       </button>
+    </div>
+    <div class="border-btn bg-red text-white p-[0.5rem]">
+      <div class="text-center">
+        <p class="font-[700]">{{ brewMethod.name }}</p>
+        <p class="text-[0.85rem]">Recomended Ratio 1:{{ brewMethod.ratio }}</p>
+      </div>
     </div>
     <!-- <div class="container py-8 flex-col-2 items-center">
       <div class="title">
