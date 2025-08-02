@@ -1,11 +1,11 @@
 <template>
   <div class="flex flex-col justify-between h-screen">
     <main>
-      <div class="container py-[2rem] flex-col-2 items-center">
+      <div class="container py-8 flex-col-2 items-center">
         <div class="title">
           <h1 class="text-center">Coffee Ratio Calculator</h1>
         </div>
-        <div class="flex gap-[0.5rem] justify-center md:w-[50%] flex-wrap">
+        <div class="flex gap-2 justify-center md:w-[50%] flex-wrap">
           <button v-for="item in ratios" :class="['btn zoom-in-out', { 'active': brewMethod.name === item.name }]"
           @click="brewMethod = item">
           <span>{{ item.name }}</span>
@@ -15,7 +15,7 @@
         <h2>1:{{ brewMethod.ratio }}</h2>
         <span>Ratio</span>
       </div>
-      <div class="fields flex flex-col md:flex-row justify-center gap-[4rem]">
+      <div class="fields flex flex-col md:flex-row justify-center gap-16">
         <div>
           <div class="input-field">
             <input type="number" v-model="grams" @input="updateCoffeeFromWater" /> <span>g</span>

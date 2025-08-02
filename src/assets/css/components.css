@@ -1,16 +1,19 @@
-@tailwind components;
+@utility btn {
+  @apply rounded-md border-2 border-cafe-dark text-center flex items-center justify-center w-max p-2;
+  &.active {
+    @apply bg-cafe-dark text-white;
+  }
+}
 
-@layer components {
-    .btn {
-        @apply rounded-md border-2 border-cafe-dark text-center flex items-center justify-center w-max p-[0.5rem];
-    }
-    .btn.active {
-        @apply bg-cafe-dark text-white;
-    }
-    .input-field {
-        @apply flex gap-[1rem] font-thin text-[4rem];
-    }
-    .input-field input {
-        @apply w-[14rem];
-    }
+@utility active {
+  &.btn {
+    @apply bg-cafe-dark text-white;
+  }
+}
+
+@utility input-field {
+  @apply flex gap-4 font-thin text-[4rem];
+  & input {
+    @apply w-56;
+  }
 }

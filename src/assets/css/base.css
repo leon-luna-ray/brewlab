@@ -1,49 +1,66 @@
-@tailwind base;
+/* @import 'tailwindcss/theme' layer(theme);
 
-@layer base {
-  a {
-    @apply underline;
-  }
+@import 'tailwindcss/preflight' layer(base); */
 
-  body {
-    @apply bg-cafe-cream text-cafe-dark;
-  }
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
 
-  h1,
-  .h1,
-  h2,
-  .h2,
-  h3,
-  .h3,
-  h4,
-  .h4 {
-    @apply font-dm font-[800];
-  }
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
 
-  h1 {
-    @apply text-[3rem];
-  }
+*,
+::after,
+::before,
+::backdrop,
+::file-selector-button {
+  border-color: var(--color-gray-200, currentcolor);
+}
 
-  h2 {
-    @apply text-[2.5rem];
-  }
+a {
+  @apply underline;
+}
 
-  h3 {
-    @apply text-[2rem];
-  }
+body {
+  @apply bg-cafe-cream text-cafe-dark;
+}
 
-  h4 {
-    @apply text-[1.5rem];
-  }
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4 {
+  @apply font-dm font-extrabold;
+}
 
-  input {
-    @apply bg-cafe-cream text-cafe-dark border-b appearance-none focus:ring-0;
-    outline: none;
-  }
+h1 {
+  @apply text-[3rem];
+}
 
-  input::-webkit-outer-spin-button,
-  input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
+h2 {
+  @apply text-[2.5rem];
+}
+
+h3 {
+  @apply text-[2rem];
+}
+
+h4 {
+  @apply text-[1.5rem];
+}
+
+input {
+  @apply bg-cafe-cream text-cafe-dark border-b appearance-none focus:ring-0;
+  outline: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
