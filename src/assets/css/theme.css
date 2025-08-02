@@ -1,8 +1,20 @@
 @theme {
     --color-cafe-cream: #fdfaf4;
     --color-cafe-dark: #2c241e;
+    --color-red: #FF6B6B;
+    --color-yellow: #FFE66D;
+    --color-teal: #4ECDC5;
+    --color-light-blue: #E9F5FE;
+    --color-dark-blue: #16213E;
+    --color-light-green: #A8E6CF;
+    --color-light-purple: #F0E8FF;
 
-    --font-dm: DM Sans, sans-serif;
-    --font-lora: Lora, serif;
-    --font-orbitron: Orbitron, sans-serif;
+    --font-bungee-hairline: 'Bungee Hairline', cursive;
+    --font-bungee-shade: 'Bungee Shade', cursive;
+    --font-fontdiner-swanky: 'Fontdiner Swanky', cursive;
+    --font-major-mono-display: 'Major Mono Display', monospace;
+    --font-raleway: Raleway, sans-serif;
+    --font-rubik-vinyl: 'Rubik Vinyl', cursive;
+
+    --font-primary: Bungee Hairline, sans-serif;
 }

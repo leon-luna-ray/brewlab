@@ -3,15 +3,15 @@
 }
 
 @utility border-red {
-  @apply border-2 border-red-500;
+  border: 1px solid red;
 }
 
 @utility border-green {
-  @apply border-2 border-green-500;
+  border: 1px solid green;
 }
 
 @utility border-blue {
-  @apply border-2 border-blue-500;
+  border: 1px solid blue;
 }
 
 @utility flex-col-03 {
