@@ -3,9 +3,13 @@ a {
 }
 
 body {
-  @apply bg-cafe-cream text-black border-red;
+  @apply bg-cafe-cream text-black font-raleway;
 }
 
 .label-text {
-  @apply uppercase text-[0.85rem];
+  @apply uppercase text-[0.85rem] font-[500];
+}
+
+h1, .h1 {
+  @apply text-[3rem] leading-[130%];
 }
