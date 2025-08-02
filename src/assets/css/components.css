@@ -1,0 +1,15 @@
+.btn {
+    @apply border-[2px] border-black rounded-lg px-[0.5rem] py-[0.5rem] transition-all-300 hover:shadow-black;
+}
+
+.btn.light-blue {
+    @apply bg-light-blue ;
+}
+
+.btn.light-blue.active {
+    @apply bg-teal text-white shadow-black;
+}
+
+.widget {
+    @apply border-[3px] border-black rounded-xl p-[2rem] bg-yellow max-w-[764px] shadow-red w-full flex flex-col gap-[1rem];
+}

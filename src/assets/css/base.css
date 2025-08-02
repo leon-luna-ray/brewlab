@@ -2,14 +2,18 @@ a {
   @apply underline;
 }
 
+button {
+  @apply cursor-pointer;
+}
+
 body {
   @apply bg-cafe-cream text-black font-raleway;
 }
 
 .label-text {
-  @apply uppercase text-[0.85rem] font-[500];
+  @apply uppercase text-[0.85rem] font-[700] tracking-wider;
 }
 
 h1, .h1 {
-  @apply text-[3rem] leading-[130%];
+  @apply text-[2.5rem] leading-[130%];
 }

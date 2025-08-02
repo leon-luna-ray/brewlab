@@ -1,8 +1,10 @@
 <template>
   <Header />
   <main>
-    <RatioWidget />
-    <TimerWidget />
+    <div class="container flex flex-col justify-center items-center gap-y-[1rem]">
+      <RatioWidget />
+      <TimerWidget />
+    </div>
   </main>
   <Footer />
 </template>

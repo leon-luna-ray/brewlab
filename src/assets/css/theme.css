@@ -1,5 +1,5 @@
 @theme {
-    --color-cafe-cream: #fdfaf4;
+    --color-cafe-cream: #fbffc0;
     --color-cafe-dark: #2c241e;
     --color-red: #FF6B6B;
     --color-yellow: #FFE66D;
@@ -11,4 +11,5 @@
 
     --font-bungee: 'Bungee Shade', cursive;
     --font-raleway: Raleway, sans-serif;
+    
 }
