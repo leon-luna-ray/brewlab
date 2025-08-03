@@ -45,6 +45,9 @@
 @utility shadow-red {
   @apply shadow-[6px_6px_0px_0px_var(--color-red)];
 }
+@utility shadow-teal {
+  @apply shadow-[6px_6px_0px_0px_var(--color-teal)];
+}
 @utility shadow-black {
   @apply shadow-[3px_3px_0px_0px_rgba(0,0,0,1)];
 }
