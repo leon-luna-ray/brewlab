@@ -1,30 +1,37 @@
 <template>
   <div class="widget">
-    <h2 class="!label-text">Brewing Method</h2>
-    <!-- brew method buttons -->
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-x-[0.4rem] gap-[0.5rem]">
-      <button v-for="item in ratios"
+    <div class="flex flex-col gap-[0.75rem]">
+
+      <h2 class="!label-text">Brewing Method</h2>
+      <!-- brew method buttons -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-x-[0.4rem] gap-[0.5rem]">
+        <button v-for="item in ratios"
         :class="['btn light-blue flex flex-col  gap-[0.25rem] justify-center items-center', { 'active': brewMethod.name === item.name }]"
         @click="brewMethod = item">
         <IconSquare class="h-[12px] w-[12px]" />
         <span class="font-[700] text-[0.75rem]">{{ item.name }}</span>
       </button>
     </div>
-    <!-- selected brew method -->
-    <div class="border-btn bg-red text-white p-[0.5rem]">
-      <div class="text-center">
-        <p class="font-[700]">{{ brewMethod.name }}</p>
-        <p class="text-[0.85rem]">Recomended Ratio 1:{{ brewMethod.ratio }}</p>
+  </div>
+  <!-- selected brew method -->
+  <div class="border-btn bg-red text-white p-[0.5rem]">
+    <div class="text-center">
+      <p class="font-[700]">{{ brewMethod.name }}</p>
+      <p class="text-[0.85rem]">Recomended Ratio 1:{{ brewMethod.ratio }}</p>
+    </div>
+  </div>
+  <!-- size presets -->
+  <div class="flex flex-col gap-[0.75rem]">
+      <h2 class="!label-text">Size</h2>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-x-[0.4rem] gap-[0.5rem]">
+        <button v-for="(item, index) in sizePresets"
+          :class="['btn light-blue flex flex-col  gap-[0.25rem] justify-center items-center', { 'active': sizePresetIndex === index }]"
+          @click="handleSizePresetClick(index)">
+          <span class="font-[700] text-[0.75rem]">{{ item.name }}</span>
+        </button>
       </div>
     </div>
-    <!-- size presets -->
-    <!-- <div class="grid grid-cols-2 md:grid-cols-4 gap-x-[0.4rem] gap-[0.5rem]">
-      <button v-for="(item, index) in sizePresets"
-        :class="['btn light-blue flex flex-col  gap-[0.25rem] justify-center items-center', { 'active': sizePresetIndex === index }]"
-        @click="sizePresetIndex = index">
-        <span class="font-[700] text-[0.75rem]">{{ item.name }}</span>
-      </button>
-    </div> -->
     <!-- inputs -->
     <div class="flex gap-[18px]">
       <div class="input-field">
@@ -57,7 +64,7 @@
   </div>
 </template>
 <script setup>
-import { ref, watch, onBeforeMount } from 'vue'
+import { ref, watch, onBeforeMount, onMounted } from 'vue'
 import { ratios } from '@/lib/data'
 
 import IconSquare from '@/components/icons/IconSquare.vue';
@@ -82,6 +89,11 @@ const updateWaterFromCoffee = () => {
 const updateCoffeeFromWater = () => {
   grams.value = Math.round(milliliters.value / brewMethod.value.ratio);
 }
+const handleSizePresetClick = (index) => {
+  sizePresetIndex.value = index;
+  milliliters.value = sizePresets[index].value;
+  updateCoffeeFromWater();
+}
 
 
 // Watchers
@@ -97,5 +109,12 @@ watch(brewMethod, () => {
 onBeforeMount(() => {
   brewMethod.value = ratios[0];
   // milliliters.value = 500;
+});
+
+onMounted(() => {
+  if (sizePresetIndex.value !== undefined) {
+    milliliters.value = sizePresets[sizePresetIndex.value].value;
+    updateCoffeeFromWater();
+  }
 });
 </script>
