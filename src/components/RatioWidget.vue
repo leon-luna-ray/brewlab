@@ -17,6 +17,14 @@
         <p class="text-[0.85rem]">Recomended Ratio 1:{{ brewMethod.ratio }}</p>
       </div>
     </div>
+    <!-- size presets -->
+    <!-- <div class="grid grid-cols-2 md:grid-cols-4 gap-x-[0.4rem] gap-[0.5rem]">
+      <button v-for="(item, index) in sizePresets"
+        :class="['btn light-blue flex flex-col  gap-[0.25rem] justify-center items-center', { 'active': sizePresetIndex === index }]"
+        @click="sizePresetIndex = index">
+        <span class="font-[700] text-[0.75rem]">{{ item.name }}</span>
+      </button>
+    </div> -->
     <!-- inputs -->
     <div class="flex gap-[18px]">
       <div class="input-field">
@@ -54,9 +62,17 @@ import { ratios } from '@/lib/data'
 
 import IconSquare from '@/components/icons/IconSquare.vue';
 
+const sizePresets = [
+  { name: '1 Cup ', value: 240 },
+  { name: '2 Cups', value: 480 },
+  { name: '4 Cups', value: 960 },
+  { name: '8 Cups', value: 1920 }
+]
+
 // Refs
-const brewMethod = ref(null);
 const grams = ref(0);
+const sizePresetIndex = ref(0);
+const brewMethod = ref(null);
 const milliliters = ref(0);
 
 // Methods
