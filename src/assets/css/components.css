@@ -2,11 +2,11 @@
     @apply border-btn px-[0.5rem] py-[0.5rem] transition-all-300 hover:shadow-black;
 }
 
-.btn.light-blue {
+.btn.light-purple {
     @apply bg-light-purple;
 }
 
-.btn.light-blue.active {
+.btn.light-purple.active {
     @apply bg-teal text-white shadow-black;
 }
 

@@ -6,7 +6,7 @@
       <!-- brew method buttons -->
       <div class="grid grid-cols-2 md:grid-cols-4 gap-x-[0.4rem] gap-[0.5rem]">
         <button v-for="item in ratios"
-          :class="['btn light-blue flex flex-col  gap-[0.25rem] justify-center items-center', { 'active': brewMethod.name === item.name }]"
+          :class="['btn light-purple flex flex-col  gap-[0.25rem] justify-center items-center', { 'active': brewMethod.name === item.name }]"
           @click="brewMethod = item">
           <IconSquare class="h-[12px] w-[12px]" />
           <div class="flex flex-col">
@@ -23,7 +23,7 @@
 
       <div class="grid grid-cols-2 md:grid-cols-4 gap-x-[0.4rem] gap-[0.5rem]">
         <button v-for="(item, index) in sizePresets"
-          :class="['btn light-blue flex flex-col  gap-[0.25rem] justify-center items-center', { 'active': sizePresetIndex === index }]"
+          :class="['btn light-purple flex flex-col  gap-[0.25rem] justify-center items-center', { 'active': sizePresetIndex === index }]"
           @click="handleSizePresetClick(index)">
           <span class="font-[700] text-[0.75rem]">{{ item.name }}</span>
         </button>
