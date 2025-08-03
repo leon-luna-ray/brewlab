@@ -11,5 +11,5 @@
 }
 
 .widget {
-    @apply border-widget p-[2rem] bg-yellow max-w-[764px] shadow-teal w-full flex flex-col gap-[1rem];
+    @apply border-widget p-[2rem] bg-yellow  shadow-teal w-full flex flex-col gap-[1rem];
 }
