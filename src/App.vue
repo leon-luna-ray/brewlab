@@ -22,21 +22,25 @@ import TimerWidget from '@/components/TimerWidget.vue';
 const brewMethod = ref(null);
 const grams = ref(0);
 const milliliters = ref(0);
+const lastModified = ref('water');
 
 // Methods
 const updateWaterFromCoffee = () => {
-  milliliters.value = grams.value * brewMethod.value.ratio;
+  lastModified.value = 'coffee';
+  milliliters.value = parseFloat((grams.value * brewMethod.value.ratio).toFixed(1));
 }
+
 const updateCoffeeFromWater = () => {
-  grams.value = milliliters.value / brewMethod.value.ratio;
+  lastModified.value = 'water';
+  grams.value = parseFloat((milliliters.value / brewMethod.value.ratio).toFixed(1));
 }
 
 // Watchers
 watch(brewMethod, () => {
-  if (milliliters.value) {
-    updateCoffeeFromWater();
-  } else if (grams.value) {
+  if (lastModified.value === 'coffee') {
     updateWaterFromCoffee();
+  } else {
+    updateCoffeeFromWater();
   }
 });
 
@@ -44,5 +48,6 @@ watch(brewMethod, () => {
 onBeforeMount(() => {
   brewMethod.value = ratios[6];
   milliliters.value = 500;
+  lastModified.value = 'water';
 });
 </script>
