@@ -19,61 +19,30 @@
     </div>
     <!-- inputs -->
     <div class="flex gap-[18px]">
-
-      <div class="input-field">
-        <label class="input-label">Coffee</label>
-        <div class="input-with-unit">
-          <input type="number" v-model="grams" @input="updateCoffeeFromWater" />
-          <span class="unit">g</span>
-        </div>
-      </div>
-
-      <div class="flex 
-        items-center justify-center pt-[20px]">
-
-        <div class="border-[2px] rounded-full h-[36px] w-[36px] flex items-center justify-center bg-light-green">
-          <IconSquare class="h-[12px] w-[12px]" />
-        </div>
-      </div>
-
-      <div class="input-field">
-        <label class="input-label">Water</label>
-        <div class="input-with-unit">
-          <input type="number" v-model="milliliters" @input="updateCoffeeFromWater" />
-          <span class="unit">ml</span>
-        </div>
-
-      </div>
+  <div class="input-field">
+    <label class="input-label">Water</label>
+    <div class="input-with-unit">
+      <input type="number" step="1" v-model="milliliters" @input="updateCoffeeFromWater" />
+      <span class="unit">ml</span>
     </div>
-    <!-- <div class="container py-8 flex-col-2 items-center">
-      <div class="title">
-        <h1 class="text-center">Coffee Ratio Calculator</h1>
-      </div>
-      <div class="flex gap-2 justify-center md:w-[50%] flex-wrap">
-        <button v-for="item in ratios" :class="['btn zoom-in-out', { 'active': brewMethod.name === item.name }]"
-          @click="brewMethod = item">
-          <span>{{ item.name }}</span>
-        </button>
-      </div>
-      <div class="text-center">
-        <h2>1:{{ brewMethod.ratio }}</h2>
-        <span>Ratio</span>
-      </div>
-      <div class="fields flex flex-col md:flex-row justify-center gap-16">
-        <div>
-          <div class="input-field">
-            <input type="number" v-model="grams" @input="updateCoffeeFromWater" /> <span>g</span>
-          </div>
-          <span class="input-label">Coffee</span>
-        </div>
-        <div>
-          <div class="input-field">
-            <input type="number" v-model="milliliters" @input="updateCoffeeFromWater" /> <span>ml</span>
-          </div>
-          <span class="input-label">Water</span>
-        </div>
-      </div>
-    </div> -->
+  </div>
+
+  <div class="flex 
+    items-center justify-center pt-[20px]">
+    <div class="border-[2px] rounded-full h-[36px] w-[36px] flex items-center justify-center bg-light-green">
+      <IconSquare class="h-[12px] w-[12px]" />
+    </div>
+  </div>
+  
+  <div class="input-field">
+    <label class="input-label">Coffee</label>
+    <div class="input-with-unit">
+      <input type="number" step="1" v-model="grams" @input="updateWaterFromCoffee" />
+      <span class="unit">g</span>
+    </div>
+  </div>
+
+    </div>
   </div>
 </template>
 <script setup>
@@ -89,11 +58,12 @@ const milliliters = ref(0);
 
 // Methods
 const updateWaterFromCoffee = () => {
-  milliliters.value = grams.value * brewMethod.value.ratio;
+  milliliters.value = Math.round(grams.value * brewMethod.value.ratio);
 }
 const updateCoffeeFromWater = () => {
-  grams.value = milliliters.value / brewMethod.value.ratio;
+  grams.value = Math.round(milliliters.value / brewMethod.value.ratio);
 }
+
 
 // Watchers
 watch(brewMethod, () => {
@@ -106,7 +76,7 @@ watch(brewMethod, () => {
 
 // Lifecycle
 onBeforeMount(() => {
-  brewMethod.value = ratios[6];
-  milliliters.value = 500;
+  brewMethod.value = ratios[0];
+  // milliliters.value = 500;
 });
 </script>
