@@ -37,7 +37,7 @@
       <div class="input-field">
         <label class="input-label">Water</label>
         <div class="input-with-unit">
-          <input type="number" step="1" v-model="milliliters" @input="updateCoffeeFromWater" />
+          <input type="number" step="1" v-model="milliliters" @input="updateCoffeeFromWater" @click="handleInputClick" />
           <span class="unit">ml</span>
         </div>
       </div>
@@ -50,7 +50,7 @@
       <div class="input-field">
         <label class="input-label">Coffee</label>
         <div class="input-with-unit">
-          <input type="number" step="1" v-model="grams" @input="updateWaterFromCoffee" />
+          <input type="number" step="1" v-model="grams" @input="updateWaterFromCoffee" @click="handleInputClick" />
           <span class="unit">g</span>
         </div>
       </div>
@@ -93,6 +93,10 @@ const handleSizePresetClick = (index) => {
   sizePresetIndex.value = index;
   milliliters.value = sizePresets[index].value;
   updateCoffeeFromWater();
+}
+
+const handleInputClick = () => {
+  sizePresetIndex.value = null;
 }
 
 
