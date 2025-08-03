@@ -3,7 +3,7 @@
   <main>
     <div class="container flex flex-col justify-center items-center gap-y-[1rem]">
       <RatioWidget />
-      <TimerWidget />
+      <!-- <TimerWidget /> -->
     </div>
   </main>
   <Footer />

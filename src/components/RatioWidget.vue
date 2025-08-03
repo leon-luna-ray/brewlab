@@ -1,6 +1,6 @@
 <template>
   <div class="widget">
-    <h2 class="label-text">Brewing Method</h2>
+    <h2 class="!label-text">Brewing Method</h2>
     <!-- brew method buttons -->
     <div class="grid grid-cols-2 md:grid-cols-4 gap-x-[0.4rem] gap-[0.5rem]">
       <button v-for="item in ratios"
@@ -19,29 +19,32 @@
     </div>
     <!-- inputs -->
     <div class="flex gap-[18px]">
-  <div class="input-field">
-    <label class="input-label">Water</label>
-    <div class="input-with-unit">
-      <input type="number" step="1" v-model="milliliters" @input="updateCoffeeFromWater" />
-      <span class="unit">ml</span>
-    </div>
-  </div>
-
-  <div class="flex 
+      <div class="input-field">
+        <label class="input-label">Water</label>
+        <div class="input-with-unit">
+          <input type="number" step="1" v-model="milliliters" @input="updateCoffeeFromWater" />
+          <span class="unit">ml</span>
+        </div>
+      </div>
+      <div class="flex 
     items-center justify-center pt-[20px]">
-    <div class="border-[2px] rounded-full h-[36px] w-[36px] flex items-center justify-center bg-light-green">
-      <IconSquare class="h-[12px] w-[12px]" />
+        <div class="border-[2px] rounded-full h-[36px] w-[36px] flex items-center justify-center bg-light-green">
+          <IconSquare class="h-[12px] w-[12px]" />
+        </div>
+      </div>
+      <div class="input-field">
+        <label class="input-label">Coffee</label>
+        <div class="input-with-unit">
+          <input type="number" step="1" v-model="grams" @input="updateWaterFromCoffee" />
+          <span class="unit">g</span>
+        </div>
+      </div>
     </div>
-  </div>
-  
-  <div class="input-field">
-    <label class="input-label">Coffee</label>
-    <div class="input-with-unit">
-      <input type="number" step="1" v-model="grams" @input="updateWaterFromCoffee" />
-      <span class="unit">g</span>
-    </div>
-  </div>
-
+    <div class="border-btn bg-dark-purple text-white p-[0.5rem] py-[1.25rem] mt-[20px]">
+      <div class="text-center">
+        <div v-if="grams < 1 || milliliters < 1" class="h4">-</div>
+        <div v-else class="h4">{{ grams }} of coffee for {{ milliliters }} ml of water</div>
+      </div>
     </div>
   </div>
 </template>
