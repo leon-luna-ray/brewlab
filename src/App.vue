@@ -1,46 +1,22 @@
 <template>
-  <div class="flex flex-col justify-between h-screen">
-    <main>
-      <div class="container py-[1rem] lg:py-[2rem] flex-col-1 lg:flex-col-2 items-center">
-        <div class="title">
-          <h1 class="text-center">Coffee Ratio Calculator</h1>
-        </div>
-        <div class="flex-col-2">
-          <div class="grid grid-cols-3 gap-[0.5rem]">
-            <button v-for="item in ratios" :class="['btn zoom-in-out', { 'active': brewMethod.name === item.name }]"
-              @click="brewMethod = item">
-              <span class="line-clamp-1">{{ item.name }}</span>
-            </button>
-          </div>
-          <div class="text-center flex flex-col items-center gap-y-[0.25rem]">
-            <span class="uppercase">Ratio</span>
-            <h2>1:{{ brewMethod.ratio }}</h2>
-          </div>
-        </div>
-        <div class="fields flex flex-col md:flex-row justify-center gap-[1rem] lg:gap-[4rem]">
-          <div>
-            <div class="input-field">
-              <input type="number" v-model="grams" @input="updateWaterFromCoffee" /> <span>g</span>
-            </div>
-            <span class="input-label">Coffee</span>
-          </div>
-          <div>
-            <div class="input-field">
-              <input type="number" v-model="milliliters" @input="updateCoffeeFromWater" /> <span>ml</span>
-            </div>
-            <span class="input-label">Water</span>
-          </div>
-        </div>
-      </div>
-    </main>
-    <Footer />
-  </div>
+  <Header />
+  <main>
+    <div class="container flex flex-col justify-center items-center gap-y-[1rem]">
+      <RatioWidget />
+      <!-- <TimerWidget /> -->
+    </div>
+  </main>
+  <Footer />
 </template>
 
 <script setup>
 import { ref, watch, onBeforeMount } from 'vue'
 import { ratios } from '@/lib/data'
+
+import Header from '@/components/Header.vue';
 import Footer from '@/components/Footer.vue';
+import RatioWidget from '@/components/RatioWidget.vue';
+import TimerWidget from '@/components/TimerWidget.vue';
 
 // Refs
 const brewMethod = ref(null);

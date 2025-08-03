@@ -1,16 +1,15 @@
-@tailwind components;
+.btn {
+    @apply border-btn px-[0.5rem] py-[0.5rem] transition-all-300 hover:shadow-black;
+}
 
-@layer components {
-    .btn {
-        @apply rounded-md border-2 border-cafe-dark text-center flex items-center justify-center p-[0.5rem];
-    }
-    .btn.active {
-        @apply bg-cafe-dark text-white;
-    }
-    .input-field {
-        @apply flex gap-[1rem] font-thin text-[4rem];
-    }
-    .input-field input {
-        @apply w-[14rem];
-    }
+.btn.light-blue {
+    @apply bg-light-purple;
+}
+
+.btn.light-blue.active {
+    @apply bg-teal text-white shadow-black;
+}
+
+.widget {
+    @apply border-widget p-[2rem] bg-yellow max-w-[764px] shadow-teal w-full flex flex-col gap-[1rem];
 }

@@ -1,0 +1,17 @@
+@theme {
+    --color-cafe-cream: #fbffc0;
+    --color-cafe-dark: #2c241e;
+    --color-red: #FF6B6B;
+    --color-yellow: #FFE66D;
+    --color-teal: #4ECDC5;
+    --color-light-blue: #E9F5FE;
+    --color-dark-blue: #16213E;
+    --color-light-green: #A8E6CF;
+    --color-light-purple: #F0E8FF;
+    --color-dark-purple: #29429b;
+
+    --font-bungee: 'Bungee Spice', cursive;
+    --font-raleway: Raleway, sans-serif;
+    --font-tac-one: 'Tac One', cursive;
+    --font-jockey-one: 'Jockey One', sans-serif;
+}

@@ -1,49 +1,65 @@
-@tailwind base;
+a {
+  @apply underline;
+}
 
-@layer base {
-  a {
-    @apply underline;
-  }
+button {
+  @apply cursor-pointer;
+}
 
-  body {
-    @apply bg-cafe-cream text-cafe-dark;
-  }
+body {
+  @apply bg-gray-100 text-black font-raleway;
+}
 
-  h1,
-  .h1,
-  h2,
-  .h2,
-  h3,
-  .h3,
-  h4,
-  .h4 {
-    @apply font-dm font-[800] leading-[100%];
-  }
+h1,
+.h1 {
+  @apply text-[3.7rem] leading-[100%];
+}
 
-  h1 {
-    @apply text-[3rem];
-  }
+h2,
+.h2 {
+  @apply text-[2.5rem] leading-[100%];
+}
 
-  h2 {
-    @apply text-[2.5rem];
-  }
+h3,
+.h3 {
+  @apply text-[1.875rem] leading-[100%];
+}
 
-  h3 {
-    @apply text-[2rem];
-  }
+h4,
+.h4 {
+  @apply text-[1.25rem] leading-[120%] font-[600];
+}
 
-  h4 {
-    @apply text-[1.5rem];
-  }
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
-  input {
-    @apply bg-cafe-cream text-cafe-dark border-b appearance-none focus:ring-0;
-    outline: none;
-  }
+input[type="number"] {
+  -moz-appearance: textfield;
+}
 
-  input::-webkit-outer-spin-button,
-  input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
+.input-field {
+  @apply flex flex-col w-full gap-[0.2rem];
+}
+
+.input-field label {
+  @apply label-text;
+}
+
+.input-field input {
+  @apply border-[2px] border-black px-[1rem] py-[0.5rem] rounded-md text-[1.125rem] font-[500] bg-light-blue;
+}
+
+.input-with-unit {
+  @apply relative flex items-center;
+}
+
+.input-with-unit input {
+  @apply w-full;
+}
+
+.input-with-unit .unit {
+  @apply absolute right-[1rem] label-text lowercase pointer-events-none;
 }
