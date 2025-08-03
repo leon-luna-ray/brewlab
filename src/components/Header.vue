@@ -1,9 +1,8 @@
 <template>
     <header>
-        <div class="container flex flex-col justify-center items-center py-[1.2rem]">
+        <div class="container flex flex-col justify-center items-center py-[1rem]">
             <h1 class="font-jockey-one uppercase">BrewLab</h1>
-            <p class="label-text !tracking-[0.5px]">Coffee Ratio Calculator</p>
-            <!-- <h2 class="h1">☕️</h2> -->
+            <p class="label-text !tracking-[0.1px] text-[0.7rem]">Coffee Ratio Calculator</p>
         </div>
     </header>
 </template>

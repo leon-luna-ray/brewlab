@@ -6,22 +6,19 @@
       <!-- brew method buttons -->
       <div class="grid grid-cols-2 md:grid-cols-4 gap-x-[0.4rem] gap-[0.5rem]">
         <button v-for="item in ratios"
-        :class="['btn light-blue flex flex-col  gap-[0.25rem] justify-center items-center', { 'active': brewMethod.name === item.name }]"
-        @click="brewMethod = item">
-        <IconSquare class="h-[12px] w-[12px]" />
-        <span class="font-[700] text-[0.75rem]">{{ item.name }}</span>
-      </button>
+          :class="['btn light-blue flex flex-col  gap-[0.25rem] justify-center items-center', { 'active': brewMethod.name === item.name }]"
+          @click="brewMethod = item">
+          <IconSquare class="h-[12px] w-[12px]" />
+          <div class="flex flex-col">
+            <span class="font-[700] text-[0.75rem]">{{ item.name }}</span>
+            <span class="text-[0.75rem]">1:{{ item.ratio }}</span>
+          </div>
+        </button>
+      </div>
     </div>
-  </div>
-  <!-- selected brew method -->
-  <div class="border-btn bg-red text-white p-[0.5rem]">
-    <div class="text-center">
-      <p class="font-[700]">{{ brewMethod.name }}</p>
-      <p class="text-[0.85rem]">Recomended Ratio 1:{{ brewMethod.ratio }}</p>
-    </div>
-  </div>
-  <!-- size presets -->
-  <div class="flex flex-col gap-[0.75rem]">
+
+    <!-- size presets -->
+    <div class="flex flex-col gap-[0.75rem]">
       <h2 class="!label-text">Size</h2>
 
       <div class="grid grid-cols-2 md:grid-cols-4 gap-x-[0.4rem] gap-[0.5rem]">
@@ -37,7 +34,8 @@
       <div class="input-field">
         <label class="input-label">Water</label>
         <div class="input-with-unit">
-          <input type="number" step="1" v-model="milliliters" @input="updateCoffeeFromWater" @click="handleInputClick" />
+          <input type="number" step="1" v-model="milliliters" @input="updateCoffeeFromWater"
+            @click="handleInputClick" />
           <span class="unit">ml</span>
         </div>
       </div>
@@ -55,10 +53,18 @@
         </div>
       </div>
     </div>
-    <div class="border-btn bg-dark-purple text-white p-[0.5rem] py-[1.25rem] mt-[20px]">
-      <div class="text-center">
-        <div v-if="grams < 1 || milliliters < 1" class="h4">-</div>
-        <div v-else class="h4">{{ grams }} of coffee for {{ milliliters }} ml of water</div>
+    <!-- selected brew method -->
+    <div class="border-btn bg-red text-white p-[0.5rem] py-[1.25rem] mt-[20px]">
+      <div class="text-center flex flex-col gap-[0.25rem]">
+        <div class="flex flex-col">
+          <p class="font-[600] body-text-2 leading-[110%]">{{ brewMethod.name }}</p>
+          <p class="text-[0.85rem]">Recomended Ratio 1:{{ brewMethod.ratio }}</p>
+        </div>
+        <div class="flex flex-col">
+          <p v-if="grams < 1 || milliliters < 1" class="body-text-2">-</p>
+          <p v-else class="body-text-2">{{ grams }}g of coffee for {{ milliliters }}ml of water</p>
+        </div>
+
       </div>
     </div>
   </div>
