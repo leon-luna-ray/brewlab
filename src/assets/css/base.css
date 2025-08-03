@@ -10,11 +10,31 @@ body {
   @apply bg-gray-100 text-black font-raleway;
 }
 
-.label-text {
-  @apply uppercase text-[0.85rem] font-[700] tracking-wider;
-}
-
 h1,
 .h1 {
-  @apply text-[4rem] leading-[100%];
+  @apply text-[3.7rem] leading-[100%];
+}
+
+.input-field {
+  @apply flex flex-col w-full gap-[0.2rem];
+}
+
+.input-field label {
+  @apply label-text;
+}
+
+.input-field input {
+  @apply border-[2px] border-black px-[1rem] py-[0.5rem] rounded-md text-[1rem] font-[500] bg-light-blue;
+}
+
+.input-with-unit {
+  @apply relative flex items-center;
+}
+
+.input-with-unit input {
+  @apply w-full;
+}
+
+.input-with-unit .unit {
+  @apply absolute right-[1rem] label-text lowercase pointer-events-none;
 }
