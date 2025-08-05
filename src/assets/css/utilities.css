@@ -2,6 +2,10 @@
   @apply mx-auto px-[1.5rem] max-w-[764px];
 }
 
+@utility body-text-2 {
+  @apply text-[1.125rem] font-[400];
+}
+
 @utility border-red {
   border: 1px solid red;
 }
@@ -14,43 +18,6 @@
   border: 1px solid blue;
 }
 
-@utility flex-col-03 {
-  @apply flex flex-col gap-y-[0.3rem];
-}
-
-@utility flex-col-05 {
-  @apply flex flex-col gap-y-2;
-}
-
-@utility flex-col-1 {
-  @apply flex flex-col gap-y-4;
-}
-
-@utility flex-col-2 {
-  @apply flex flex-col gap-y-8;
-}
-
-@utility flex-col-4 {
-  @apply flex flex-col gap-y-16;
-}
-
-@utility flex-col-8 {
-  @apply flex flex-col gap-y-32;
-}
-
-@utility zoom-in-out {
-  @apply hover:cursor-pointer transition ease-in-out hover:-translate-y-1 hover:scale-105 duration-300;
-}
-
-@utility shadow-red {
-  @apply shadow-[6px_6px_0px_0px_var(--color-red)];
-}
-@utility shadow-teal {
-  @apply shadow-[6px_6px_0px_0px_var(--color-teal)];
-}
-@utility shadow-black {
-  @apply shadow-[3px_3px_0px_0px_rgba(0,0,0,1)];
-}
 @utility border-widget {
   @apply border-[3px] border-black rounded-xl;
 }
@@ -59,9 +26,22 @@
   @apply border-[2px] border-black rounded-md;
 }
 
+@utility shadow-red {
+  @apply shadow-[6px_6px_0px_0px_var(--color-red)];
+}
+
+@utility shadow-teal {
+  @apply shadow-[6px_6px_0px_0px_var(--color-teal)];
+}
+
+@utility shadow-black {
+  @apply shadow-[3px_3px_0px_0px_rgba(0,0,0,1)];
+}
+
 @utility label-text {
   @apply uppercase text-[0.85rem] font-[700] tracking-wider;
 }
-@utility body-text-2 {
-  @apply text-[1.125rem] font-[400];
+
+@utility zoom-in-out {
+  @apply hover:cursor-pointer transition ease-in-out hover:-translate-y-1 hover:scale-105 duration-300;
 }
