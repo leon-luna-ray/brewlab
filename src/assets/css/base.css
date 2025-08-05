@@ -7,7 +7,7 @@ button {
 }
 
 body {
-  @apply bg-gray-100 text-black font-raleway;
+  @apply bg-light-blue text-black font-raleway;
 }
 
 h1,

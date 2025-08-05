@@ -7,9 +7,9 @@
 }
 
 .btn.light-purple.active {
-    @apply bg-teal text-white shadow-black;
+    @apply bg-teal shadow-black;
 }
 
 .widget {
-    @apply border-widget p-[2rem] bg-yellow  shadow-teal w-full flex flex-col gap-[1rem];
+    @apply border-widget p-[2rem] bg-yellow w-full flex flex-col gap-[1rem];
 }

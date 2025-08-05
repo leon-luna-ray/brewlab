@@ -1,5 +1,5 @@
 <template>
-  <div class="widget">
+  <div class="widget shadow-teal">
     <div class="flex flex-col gap-[0.75rem]">
 
       <h2 class="!label-text">Brewing Method</h2>
