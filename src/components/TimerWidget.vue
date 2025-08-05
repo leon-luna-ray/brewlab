@@ -17,13 +17,14 @@
     </div>
 </template>
 <script setup>
-import { ref, watch } from 'vue'
+import { ref } from 'vue'
+
 import IconSquare from '@/components/icons/IconSquare.vue';
 
 const formattedTime = ref('00:00');
 const timerInterval = ref(null);
 const isTimerRunning = ref(false);
-const seconds = ref(0); // Track elapsed seconds
+const seconds = ref(0);
 
 const formatTime = (seconds) => {
     const minutes = Math.floor(seconds / 60);

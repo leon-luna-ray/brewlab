@@ -1,13 +1,14 @@
 @theme {
+    /* App Colors */
     --color-red: #FF6B6B;
     --color-yellow: #FFFF00;
     --color-teal: #00FFFF;
     --color-dark-blue: #87CEEB;
-
     --color-light-blue: #E9F5FE;
     --color-light-green: #00FF00;
     --color-light-purple: #DDA0DD;
     --color-light-coffee: #D2B48C;
+    
     /* Additional Neubrutalist Colors */
     --color-black: #000000;
     --color-white: #FFFFFF;
@@ -25,6 +26,7 @@
     --color-electric-violet: #8B00FF;
     --color-chartreuse: #7FFF00;
 
+    /* Fonts */
     --font-bungee: 'Bungee Spice', cursive;
     --font-raleway: Raleway, sans-serif;
     --font-tac-one: 'Tac One', cursive;
