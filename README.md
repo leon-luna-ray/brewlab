@@ -13,4 +13,4 @@ An app for quickly calculating your brew in the morning. The app will calculate 
 - Vue.js
 
 ## Image
-![Screenshot of the app](public/images/screenshot-1.png)
+![Screenshot of the app](public/images/brewlab.png)
